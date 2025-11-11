@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Dark charcoal/black base */
+    --background: 0 0% 7%;
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 10%;
+    --popover-foreground: 0 0% 98%;
+
+    /* Lucky Cards Brand Red #B82635 */
+    --primary: 355 66% 44%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 65%;
+
+    /* Lucky Cards Gold Accent #F7C54A */
+    --accent: 43 92% 58%;
+    --accent-foreground: 0 0% 0%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 43 92% 58%;
+
+    --radius: 0.5rem;
+
+    /* Lucky Cards Brand Colors */
+    --brand-red: 355 66% 44%;
+    --brand-gold-highlight: 43 100% 71%;
+    --brand-gold-mid: 43 92% 58%;
+    --brand-gold-deep: 43 72% 50%;
+    --brand-black: 0 0% 0%;
+    --brand-black-soft: 0 0% 18%;
+
+    /* Sidebar with Brand Red */
+    --sidebar-background: 355 66% 44%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 43 92% 58%;
+    --sidebar-primary-foreground: 0 0% 0%;
+    --sidebar-accent: 355 66% 38%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 355 66% 38%;
+    --sidebar-ring: 43 92% 58%;
+  }
+
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+
+  pre, code {
+    @apply font-mono;
+  }
+}
+
+.markdown-editor {
+  @apply font-mono text-base leading-relaxed;
+}
+
+.markdown-preview {
+  @apply prose max-w-none prose-invert;
+}
+
+.markdown-preview pre {
+  @apply bg-secondary p-4 rounded-md overflow-x-auto;
+}
+
+.markdown-preview code {
+  @apply text-sm font-mono text-accent;
+}
+
+.markdown-preview h1,
+.markdown-preview h2,
+.markdown-preview h3,
+.markdown-preview h4,
+.markdown-preview h5,
+.markdown-preview h6 {
+  @apply font-sans font-semibold text-foreground;
+}
+
+.markdown-preview ul,
+.markdown-preview ol {
+  @apply my-4 ml-6;
+}
+.markdown-preview ol {
+  @apply my-4 ml-6;
+}
+
+/* Custom Scrollbar Styles */
+.scrollbar-thin {
+  scrollbar-width: thin;
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 8px;
+}
+
+.scrollbar-thumb-brand-gold-mid::-webkit-scrollbar-thumb {
+  background-color: hsl(var(--brand-gold-mid));
+  border-radius: 4px;
+}
+
+.scrollbar-thumb-brand-gold-mid::-webkit-scrollbar-thumb:hover {
+  background-color: hsl(var(--brand-gold-highlight));
+}
+
+.scrollbar-track-brand-red\/50::-webkit-scrollbar-track {
+  background-color: hsl(var(--brand-red) / 0.5);
+  border-radius: 4px;
+}
